@@ -10,7 +10,7 @@ import {
   X,
 } from 'lucide-react'
 
-const NAV_LINKS = ['About', 'Philosophy', 'Packages', 'Testimonials', 'FAQ']
+const NAV_LINKS = ['About', 'Philosophy', 'Packages']
 
 const PACKAGES = [
   {
@@ -108,7 +108,7 @@ function App() {
             onClick={() => scrollTo('hero')}
             className="text-lg font-normal tracking-widest uppercase text-stone-100"
           >
-            Styled
+            Uniform
           </button>
 
           <div className="hidden items-center gap-10 lg:flex">
@@ -125,7 +125,7 @@ function App() {
               onClick={() => scrollTo('apply')}
               className="border border-stone-100 px-7 py-2.5 text-xs font-medium tracking-wider uppercase text-stone-100 transition-all hover:bg-stone-100 hover:text-stone-950"
             >
-              Apply for Styling
+              Apply Now
             </button>
           </div>
 
@@ -152,7 +152,7 @@ function App() {
               onClick={() => scrollTo('apply')}
               className="mt-4 w-full border border-stone-100 py-3 text-xs font-medium tracking-wider uppercase text-stone-100"
             >
-              Apply for Styling
+              Apply Now
             </button>
           </div>
         )}
@@ -178,7 +178,7 @@ function App() {
         <div className="relative z-10 mx-auto max-w-7xl px-6 py-32 lg:px-8">
           <div className="max-w-3xl">
             <p className="mb-6 text-xs font-medium tracking-widest uppercase text-stone-400">
-              Personal styling for ambitious men in tech
+              Personal styling for ambitious men in tech — by Uniform
             </p>
             <h1 className="mb-8 text-5xl leading-none font-light tracking-tight text-stone-100 md:text-7xl lg:text-8xl">
               Look like the person{' '}
@@ -195,7 +195,7 @@ function App() {
               onClick={() => scrollTo('apply')}
               className="group inline-flex items-center gap-3 bg-stone-100 px-10 py-4 text-xs font-medium tracking-wider uppercase text-stone-950 transition-all hover:bg-white"
             >
-              Apply for Styling
+              Apply Now
               <ArrowRight
                 size={14}
                 className="transition-transform group-hover:translate-x-1"
@@ -278,6 +278,32 @@ function App() {
               </div>
             </div>
           </div>
+
+          {/* Testimonials within About */}
+          <div className="mt-24 border-t border-stone-200 pt-24">
+            <p className="mb-4 text-xs font-medium tracking-widest uppercase text-stone-400">
+              Results
+            </p>
+            <h3 className="mb-12 text-3xl font-light text-stone-900 md:text-4xl">
+              From our clients.
+            </h3>
+            <div className="grid gap-8 lg:grid-cols-3">
+              {TESTIMONIALS.map((t) => (
+                <div
+                  key={t.name}
+                  className="flex flex-col border border-stone-200 bg-white p-10"
+                >
+                  <p className="flex-1 text-base leading-relaxed text-stone-600">
+                    "{t.quote}"
+                  </p>
+                  <div className="mt-8 border-t border-stone-100 pt-6">
+                    <p className="text-sm font-medium text-stone-900">{t.name}</p>
+                    <p className="mt-1 text-xs text-stone-400">{t.role}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
@@ -334,7 +360,7 @@ function App() {
         </div>
       </section>
 
-      {/* Packages Section */}
+      {/* Packages & FAQ Section */}
       <section id="packages" className="bg-white py-24 md:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mb-16 text-center">
@@ -379,9 +405,7 @@ function App() {
                     <li key={feature} className="flex items-start gap-3">
                       <Check
                         size={16}
-                        className={`mt-0.5 shrink-0 ${
-                          pkg.featured ? 'text-stone-400' : 'text-stone-400'
-                        }`}
+                        className="mt-0.5 shrink-0 text-stone-400"
                       />
                       <span
                         className={`text-sm ${
@@ -406,75 +430,42 @@ function App() {
               </div>
             ))}
           </div>
-        </div>
-      </section>
 
-      {/* Testimonials Section */}
-      <section id="testimonials" className="bg-stone-50 py-24 md:py-32">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mb-16">
-            <p className="mb-4 text-xs font-medium tracking-widest uppercase text-stone-400">
-              Results
-            </p>
-            <h2 className="text-3xl font-light text-stone-900 md:text-4xl">
-              From our clients.
-            </h2>
-          </div>
+          {/* FAQ within Packages */}
+          <div className="mx-auto mt-24 max-w-3xl border-t border-stone-200 pt-24">
+            <div className="mb-12 text-center">
+              <p className="mb-4 text-xs font-medium tracking-widest uppercase text-stone-400">
+                FAQ
+              </p>
+              <h3 className="text-3xl font-light text-stone-900 md:text-4xl">
+                Common questions.
+              </h3>
+            </div>
 
-          <div className="grid gap-8 lg:grid-cols-3">
-            {TESTIMONIALS.map((t) => (
-              <div
-                key={t.name}
-                className="flex flex-col border border-stone-200 bg-white p-10"
-              >
-                <p className="flex-1 text-base leading-relaxed text-stone-600">
-                  "{t.quote}"
-                </p>
-                <div className="mt-8 border-t border-stone-100 pt-6">
-                  <p className="text-sm font-medium text-stone-900">{t.name}</p>
-                  <p className="mt-1 text-xs text-stone-400">{t.role}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ Section */}
-      <section id="faq" className="bg-white py-24 md:py-32">
-        <div className="mx-auto max-w-3xl px-6 lg:px-8">
-          <div className="mb-16 text-center">
-            <p className="mb-4 text-xs font-medium tracking-widest uppercase text-stone-400">
-              FAQ
-            </p>
-            <h2 className="text-3xl font-light text-stone-900 md:text-4xl">
-              Common questions.
-            </h2>
-          </div>
-
-          <div className="divide-y divide-stone-200">
-            {FAQ_ITEMS.map((item, i) => (
-              <div key={i} className="py-6">
-                <button
-                  onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                  className="flex w-full items-center justify-between text-left"
-                >
-                  <span className="pr-4 text-base font-medium text-stone-900">
-                    {item.q}
-                  </span>
-                  {openFaq === i ? (
-                    <ChevronUp size={18} className="shrink-0 text-stone-400" />
-                  ) : (
-                    <ChevronDown size={18} className="shrink-0 text-stone-400" />
+            <div className="divide-y divide-stone-200">
+              {FAQ_ITEMS.map((item, i) => (
+                <div key={i} className="py-6">
+                  <button
+                    onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                    className="flex w-full items-center justify-between text-left"
+                  >
+                    <span className="pr-4 text-base font-medium text-stone-900">
+                      {item.q}
+                    </span>
+                    {openFaq === i ? (
+                      <ChevronUp size={18} className="shrink-0 text-stone-400" />
+                    ) : (
+                      <ChevronDown size={18} className="shrink-0 text-stone-400" />
+                    )}
+                  </button>
+                  {openFaq === i && (
+                    <p className="mt-4 text-sm leading-relaxed text-stone-500">
+                      {item.a}
+                    </p>
                   )}
-                </button>
-                {openFaq === i && (
-                  <p className="mt-4 text-sm leading-relaxed text-stone-500">
-                    {item.a}
-                  </p>
-                )}
-              </div>
-            ))}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -577,7 +568,7 @@ function App() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
             <p className="text-sm font-normal tracking-widest uppercase text-stone-400">
-              Styled
+              Uniform
             </p>
             <div className="flex gap-8">
               {NAV_LINKS.map((link) => (
@@ -591,7 +582,7 @@ function App() {
               ))}
             </div>
             <p className="text-xs text-stone-600">
-              &copy; {new Date().getFullYear()} Styled. NYC & SF.
+              &copy; {new Date().getFullYear()} Uniform Styling. NYC & SF.
             </p>
           </div>
         </div>
