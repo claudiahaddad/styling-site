@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import './App.css'
 import {
   ArrowRight,
@@ -98,11 +98,26 @@ function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [openFaq, setOpenFaq] = useState<number | null>(null)
   const [carouselIdx, setCarouselIdx] = useState(0)
+  const [visibleCount, setVisibleCount] = useState(3)
+  const carouselRef = useRef<HTMLDivElement>(null)
 
-  const nextSlide = () =>
-    setCarouselIdx((prev) => (prev + 1) % STYLE_PICKS.length)
-  const prevSlide = () =>
-    setCarouselIdx((prev) => (prev - 1 + STYLE_PICKS.length) % STYLE_PICKS.length)
+  useEffect(() => {
+    const onResize = () => setVisibleCount(window.innerWidth >= 768 ? 3 : 1)
+    onResize()
+    window.addEventListener('resize', onResize)
+    return () => window.removeEventListener('resize', onResize)
+  }, [])
+
+  const maxIdx = Math.max(0, STYLE_PICKS.length - visibleCount)
+
+  const nextSlide = useCallback(
+    () => setCarouselIdx((prev) => Math.min(prev + 1, maxIdx)),
+    [maxIdx]
+  )
+  const prevSlide = useCallback(
+    () => setCarouselIdx((prev) => Math.max(prev - 1, 0)),
+    []
+  )
 
   const scrollTo = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
@@ -398,15 +413,21 @@ function App() {
             </div>
           </div>
 
-          <div className="overflow-hidden">
+          <div className="overflow-hidden" ref={carouselRef}>
             <div
               className="flex gap-6 transition-transform duration-500 ease-in-out"
-              style={{ transform: `translateX(-${carouselIdx * (100 / 3)}%)` }}
+              style={{
+                transform:
+                  visibleCount === 1
+                    ? `translateX(calc(-${carouselIdx} * (100% + 1.5rem)))`
+                    : `translateX(calc(-${carouselIdx} * (33.3333% + 0.5rem)))`,
+              }}
             >
               {STYLE_PICKS.map((pick) => (
                 <div
                   key={pick.title}
                   className="w-full shrink-0 md:w-1/3"
+                  style={{ minWidth: visibleCount === 1 ? '100%' : undefined }}
                 >
                   <div className="overflow-hidden bg-white">
                     <img
@@ -431,7 +452,7 @@ function App() {
           </div>
 
           <div className="mt-8 flex justify-center gap-2 md:hidden">
-            {STYLE_PICKS.map((_, i) => (
+            {Array.from({ length: maxIdx + 1 }, (_, i) => (
               <button
                 key={i}
                 onClick={() => setCarouselIdx(i)}
