@@ -261,6 +261,48 @@ function App() {
         </div>
       </section>
 
+      {/* Founders Section */}
+      <section className="bg-warm-50 py-24 md:py-32">
+        <div className="mx-auto max-w-4xl px-6 lg:px-8">
+          <div className="mb-12 text-center">
+            <p className="mb-4 text-xs font-medium tracking-widest uppercase text-warm-400">
+              Meet the Founders
+            </p>
+            <h2 className="font-serif text-3xl font-light text-warm-900 md:text-4xl">
+              Founded by Claudia and Jenn.
+            </h2>
+          </div>
+          <div className="space-y-6 text-base leading-relaxed text-warm-600">
+            <p>
+              We met five years ago through the tech world and became close
+              friends over a shared appreciation for design, culture, and
+              personal style.
+            </p>
+            <p>
+              Spending years around founders, investors, and operators, we kept
+              seeing the same thing: brilliant, successful men who had mastered
+              every part of their lives — except the part that shaped first
+              impressions and everyday confidence.
+            </p>
+            <p>
+              Many wanted to feel more confident and put together, but didn't
+              know where to start — or simply didn't have the time.
+            </p>
+            <p>
+              Over the years, we naturally became the people friends and family
+              turned to for outfit advice, wardrobe refreshes, and help finding
+              pieces that made them feel confident, polished, and more like
+              themselves.
+            </p>
+            <p>
+              Uniform was created to bring that same thoughtful, personalized
+              approach to ambitious men looking to build a wardrobe that feels
+              effortless, refined, and aligned with the life they're building.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Problem / Emotional Resonance */}
       <section className="bg-white py-24 md:py-32">
         <div className="mx-auto max-w-4xl px-6 text-center lg:px-8">
