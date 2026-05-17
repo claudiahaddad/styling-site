@@ -30,15 +30,29 @@ const STYLE_PICKS = [
     title: 'ALD Crest Quarter-Zip',
     brand: 'Aim\u00e9 Leon Dore',
     desc: 'The perfect layering piece for spring.',
-    img: '/images/ald-pullover.jpg',
+    img: '/images/md-polo-sweater.webp',
     link: 'https://www.aimeleondore.com/products/crest-quarter-zip-pullover-14',
   },
   {
     title: 'Cotton Knit Polo Sweater',
     brand: 'Massimo Dutti',
     desc: 'Refined knit polo — office to evening.',
-    img: '/images/md-polo-sweater.webp',
+    img: '/images/ald-pullover.jpg',
     link: 'https://www.massimodutti.com/us/cotton-knit-polo-sweater-l01210201',
+  },
+  {
+    title: 'Kenton Cotton Pants',
+    brand: 'Frankie Shop',
+    desc: 'Relaxed tailoring in charcoal cotton.',
+    img: '/images/frankie-pants.webp',
+    link: 'https://thefrankieshop.com/products/kenton-cotton-pants-charcoal',
+  },
+  {
+    title: 'Relaxed Linen Shirt',
+    brand: 'COS',
+    desc: 'Khaki linen \u2014 effortless warm-weather staple.',
+    img: '/images/cos-linen-shirt.avif',
+    link: 'https://www.cos.com/en-us/men/menswear/shirts/casualshirts/product/relaxed-linen-shirt-khaki-1146543021',
   },
   {
     title: 'The Quiet Power Blazer',
@@ -59,13 +73,6 @@ const STYLE_PICKS = [
     brand: 'APC',
     desc: 'One look that transitions seamlessly.',
     img: '/images/style3.jpg',
-    link: '',
-  },
-  {
-    title: 'The Founder Uniform',
-    brand: 'COS',
-    desc: 'Clean lines, zero decision fatigue.',
-    img: '/images/style4.jpg',
     link: '',
   },
 ]
@@ -149,13 +156,13 @@ function App() {
   }
 
   return (
-    <div className="min-h-screen bg-stone-50 antialiased" style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>
+    <div className="min-h-screen bg-warm-50 font-sans antialiased">
       {/* Navigation */}
-      <nav className="fixed top-0 z-50 w-full bg-stone-950/95 backdrop-blur-md">
+      <nav className="fixed top-0 z-50 w-full bg-warm-950/95 backdrop-blur-md">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 lg:px-8">
           <button
             onClick={() => scrollTo('hero')}
-            className="text-lg font-normal tracking-widest uppercase text-stone-100"
+            className="text-lg font-normal tracking-widest uppercase text-warm-100"
           >
             Uniform
           </button>
@@ -165,21 +172,21 @@ function App() {
               <button
                 key={link}
                 onClick={() => scrollTo(link.toLowerCase())}
-                className="text-xs font-medium tracking-wider uppercase text-stone-400 transition-colors hover:text-stone-100"
+                className="text-xs font-medium tracking-wider uppercase text-warm-400 transition-colors hover:text-warm-100"
               >
                 {link}
               </button>
             ))}
             <button
               onClick={() => scrollTo('apply')}
-              className="border border-stone-100 px-7 py-2.5 text-xs font-medium tracking-wider uppercase text-stone-100 transition-all hover:bg-stone-100 hover:text-stone-950"
+              className="border border-warm-100 px-7 py-2.5 text-xs font-medium tracking-wider uppercase text-warm-100 transition-all hover:bg-warm-100 hover:text-warm-950"
             >
               Apply Now
             </button>
           </div>
 
           <button
-            className="text-stone-100 lg:hidden"
+            className="text-warm-100 lg:hidden"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
@@ -187,19 +194,19 @@ function App() {
         </div>
 
         {mobileMenuOpen && (
-          <div className="border-t border-stone-800 bg-stone-950 px-6 pb-6 pt-4 lg:hidden">
+          <div className="border-t border-warm-800 bg-warm-950 px-6 pb-6 pt-4 lg:hidden">
             {NAV_LINKS.map((link) => (
               <button
                 key={link}
                 onClick={() => scrollTo(link.toLowerCase())}
-                className="block w-full py-3 text-left text-sm font-medium tracking-wide text-stone-300"
+                className="block w-full py-3 text-left text-sm font-medium tracking-wide text-warm-300"
               >
                 {link}
               </button>
             ))}
             <button
               onClick={() => scrollTo('apply')}
-              className="mt-4 w-full border border-stone-100 py-3 text-xs font-medium tracking-wider uppercase text-stone-100"
+              className="mt-4 w-full border border-warm-100 py-3 text-xs font-medium tracking-wider uppercase text-warm-100"
             >
               Apply Now
             </button>
@@ -210,7 +217,7 @@ function App() {
       {/* Hero Section */}
       <section
         id="hero"
-        className="relative flex min-h-screen items-center bg-stone-950"
+        className="relative flex min-h-screen items-center bg-warm-950"
       >
         <div className="absolute inset-0">
           <img
@@ -219,30 +226,30 @@ function App() {
             className="h-full w-full object-cover opacity-40"
             onError={(e) => {
               const target = e.target as HTMLImageElement
-              target.src = 'https://placehold.co/1920x1080/1c1917/a8a29e/png?text=STYLED'
+              target.src = 'https://placehold.co/1920x1080/2A241E/B8A68E/png?text=STYLED'
             }}
           />
         </div>
 
         <div className="relative z-10 mx-auto max-w-7xl px-6 py-32 lg:px-8">
           <div className="max-w-3xl">
-            <p className="mb-6 text-xs font-medium tracking-widest uppercase text-stone-400">
+            <p className="mb-6 text-xs font-medium tracking-widest uppercase text-warm-400">
               Personal styling for ambitious men in tech — by Uniform
             </p>
-            <h1 className="mb-8 text-5xl leading-none font-light tracking-tight text-stone-100 md:text-7xl lg:text-8xl">
+            <h1 className="mb-8 font-serif text-5xl leading-none font-light tracking-tight text-warm-100 md:text-7xl lg:text-8xl">
               Look like the person{' '}
-              <span className="italic text-stone-300">
+              <span className="italic text-warm-300">
                 you're becoming.
               </span>
             </h1>
-            <p className="mb-12 max-w-xl text-lg leading-relaxed font-light text-stone-400">
+            <p className="mb-12 max-w-xl text-lg leading-relaxed font-light text-warm-400">
               Executive presence through personal style. For founders, builders,
               and operators who want to show up with confidence — without
               fashion becoming a hobby.
             </p>
             <button
               onClick={() => scrollTo('apply')}
-              className="group inline-flex items-center gap-3 bg-stone-100 px-10 py-4 text-xs font-medium tracking-wider uppercase text-stone-950 transition-all hover:bg-white"
+              className="group inline-flex items-center gap-3 bg-warm-100 px-10 py-4 text-xs font-medium tracking-wider uppercase text-warm-950 transition-all hover:bg-white"
             >
               Apply Now
               <ArrowRight
@@ -257,12 +264,12 @@ function App() {
       {/* Problem / Emotional Resonance */}
       <section className="bg-white py-24 md:py-32">
         <div className="mx-auto max-w-4xl px-6 text-center lg:px-8">
-          <p className="mb-6 text-xs font-medium tracking-widest uppercase text-stone-400">
+          <p className="mb-6 text-xs font-medium tracking-widest uppercase text-warm-400">
             Sound familiar?
           </p>
-          <h2 className="mb-12 text-3xl font-light leading-snug text-stone-900 md:text-4xl">
+          <h2 className="mb-12 font-serif text-3xl font-light leading-snug text-warm-900 md:text-4xl">
             You've optimized everything in your career.{' '}
-            <span className="text-stone-400">
+            <span className="text-warm-400">
               But when it comes to how you present yourself, you're still
               winging it.
             </span>
@@ -277,8 +284,8 @@ function App() {
               'Ready to invest in how you show up',
             ].map((item) => (
               <div key={item} className="flex items-start gap-3">
-                <Minus size={16} className="mt-1 shrink-0 text-stone-300" />
-                <p className="text-base leading-relaxed text-stone-600">{item}</p>
+                <Minus size={16} className="mt-1 shrink-0 text-warm-300" />
+                <p className="text-base leading-relaxed text-warm-600">{item}</p>
               </div>
             ))}
           </div>
@@ -286,29 +293,29 @@ function App() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="bg-stone-50 py-24 md:py-32">
+      <section id="about" className="bg-warm-50 py-24 md:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid items-center gap-16 lg:grid-cols-2">
             <div className="overflow-hidden">
               <img
                 src="/images/about.jpg"
                 alt="Stylist portrait"
-                className="h-full w-full object-cover grayscale"
+                className="h-full w-full object-cover"
                 onError={(e) => {
                   const target = e.target as HTMLImageElement
-                  target.src = 'https://placehold.co/800x1000/1c1917/a8a29e/png?text=About'
+                  target.src = 'https://placehold.co/800x1000/2A241E/B8A68E/png?text=About'
                 }}
               />
             </div>
 
             <div>
-              <p className="mb-4 text-xs font-medium tracking-widest uppercase text-stone-400">
+              <p className="mb-4 text-xs font-medium tracking-widest uppercase text-warm-400">
                 About
               </p>
-              <h2 className="mb-8 text-3xl font-light text-stone-900 md:text-4xl">
+              <h2 className="mb-8 font-serif text-3xl font-light text-warm-900 md:text-4xl">
                 Built for builders.
               </h2>
-              <div className="space-y-6 text-base leading-relaxed text-stone-500">
+              <div className="space-y-6 text-base leading-relaxed text-warm-500">
                 <p>
                   We understand the world you operate in — the board meetings
                   that require gravitas, the investor dinners where first
@@ -329,25 +336,25 @@ function App() {
           </div>
 
           {/* Testimonials within About */}
-          <div className="mt-24 border-t border-stone-200 pt-24">
-            <p className="mb-4 text-xs font-medium tracking-widest uppercase text-stone-400">
+          <div className="mt-24 border-t border-warm-200 pt-24">
+            <p className="mb-4 text-xs font-medium tracking-widest uppercase text-warm-400">
               Results
             </p>
-            <h3 className="mb-12 text-3xl font-light text-stone-900 md:text-4xl">
+            <h3 className="mb-12 font-serif text-3xl font-light text-warm-900 md:text-4xl">
               From our clients.
             </h3>
             <div className="grid gap-8 lg:grid-cols-3">
               {TESTIMONIALS.map((t) => (
                 <div
                   key={t.name}
-                  className="flex flex-col border border-stone-200 bg-white p-10"
+                  className="flex flex-col border border-warm-200 bg-white p-10"
                 >
-                  <p className="flex-1 text-base leading-relaxed text-stone-600">
+                  <p className="flex-1 text-base leading-relaxed text-warm-600">
                     "{t.quote}"
                   </p>
-                  <div className="mt-8 border-t border-stone-100 pt-6">
-                    <p className="text-sm font-medium text-stone-900">{t.name}</p>
-                    <p className="mt-1 text-xs text-stone-400">{t.role}</p>
+                  <div className="mt-8 border-t border-warm-100 pt-6">
+                    <p className="text-sm font-medium text-warm-900">{t.name}</p>
+                    <p className="mt-1 text-xs text-warm-400">{t.role}</p>
                   </div>
                 </div>
               ))}
@@ -357,17 +364,17 @@ function App() {
       </section>
 
       {/* Transformation Philosophy */}
-      <section id="philosophy" className="bg-stone-950 py-24 md:py-32">
+      <section id="philosophy" className="bg-warm-950 py-24 md:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid items-center gap-16 lg:grid-cols-2">
             <div>
-              <p className="mb-4 text-xs font-medium tracking-widest uppercase text-stone-500">
+              <p className="mb-4 text-xs font-medium tracking-widest uppercase text-warm-500">
                 Our Philosophy
               </p>
-              <h2 className="mb-8 text-3xl font-light text-stone-100 md:text-4xl">
+              <h2 className="mb-8 font-serif text-3xl font-light text-warm-100 md:text-4xl">
                 Confidence through simplicity.
               </h2>
-              <div className="space-y-6 text-base leading-relaxed text-stone-400">
+              <div className="space-y-6 text-base leading-relaxed text-warm-400">
                 <p>
                   We don't believe in trend-chasing or loud branding. We believe
                   in fewer, better pieces — a refined system that makes getting
@@ -387,8 +394,8 @@ function App() {
                   { label: 'Elevated basics', desc: 'Timeless, not trendy' },
                 ].map((item) => (
                   <div key={item.label}>
-                    <p className="text-sm font-medium text-stone-200">{item.label}</p>
-                    <p className="mt-1 text-xs text-stone-500">{item.desc}</p>
+                    <p className="text-sm font-medium text-warm-200">{item.label}</p>
+                    <p className="mt-1 text-xs text-warm-500">{item.desc}</p>
                   </div>
                 ))}
               </div>
@@ -398,10 +405,10 @@ function App() {
               <img
                 src="/images/transform.jpg"
                 alt="Elevated menswear aesthetic"
-                className="h-full w-full object-cover grayscale"
+                className="h-full w-full object-cover"
                 onError={(e) => {
                   const target = e.target as HTMLImageElement
-                  target.src = 'https://placehold.co/800x1000/1c1917/a8a29e/png?text=Philosophy'
+                  target.src = 'https://placehold.co/800x1000/2A241E/B8A68E/png?text=Philosophy'
                 }}
               />
             </div>
@@ -413,10 +420,10 @@ function App() {
       <section className="bg-white py-24 md:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mb-16 text-center">
-            <p className="mb-4 text-xs font-medium tracking-widest uppercase text-stone-400">
+            <p className="mb-4 text-xs font-medium tracking-widest uppercase text-warm-400">
               Services
             </p>
-            <h2 className="text-3xl font-light text-stone-900 md:text-4xl">
+            <h2 className="font-serif text-3xl font-light text-warm-900 md:text-4xl">
               For all your wardrobe needs.
             </h2>
           </div>
@@ -425,17 +432,17 @@ function App() {
             {WARDROBE_CATEGORIES.map((cat) => (
               <div
                 key={cat.name}
-                className="group flex flex-col items-center border border-stone-200 bg-stone-50 p-10 text-center transition-all hover:border-stone-400 hover:bg-stone-100"
+                className="group flex flex-col items-center border border-warm-200 bg-warm-50 p-10 text-center transition-all hover:border-warm-400 hover:bg-warm-100"
               >
                 <cat.icon
                   size={28}
-                  className="mb-5 text-stone-400 transition-colors group-hover:text-stone-900"
+                  className="mb-5 text-warm-400 transition-colors group-hover:text-warm-900"
                   strokeWidth={1.5}
                 />
-                <h3 className="text-base font-medium tracking-wide text-stone-900">
+                <h3 className="text-base font-medium tracking-wide text-warm-900">
                   {cat.name}
                 </h3>
-                <p className="mt-2 text-sm text-stone-500">{cat.desc}</p>
+                <p className="mt-2 text-sm text-warm-500">{cat.desc}</p>
               </div>
             ))}
           </div>
@@ -443,27 +450,27 @@ function App() {
       </section>
 
       {/* Styles We Love */}
-      <section id="styles" className="bg-stone-50 py-24 md:py-32">
+      <section id="styles" className="bg-warm-50 py-24 md:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mb-16 flex items-end justify-between">
             <div>
-              <p className="mb-4 text-xs font-medium tracking-widest uppercase text-stone-400">
+              <p className="mb-4 text-xs font-medium tracking-widest uppercase text-warm-400">
                 This Spring
               </p>
-              <h2 className="text-3xl font-light text-stone-900 md:text-4xl">
+              <h2 className="font-serif text-3xl font-light text-warm-900 md:text-4xl">
                 Styles we love.
               </h2>
             </div>
             <div className="hidden gap-3 md:flex">
               <button
                 onClick={prevSlide}
-                className="flex h-10 w-10 items-center justify-center border border-stone-300 text-stone-600 transition-colors hover:bg-stone-900 hover:text-white"
+                className="flex h-10 w-10 items-center justify-center border border-warm-300 text-warm-600 transition-colors hover:bg-warm-900 hover:text-white"
               >
                 <ChevronLeft size={18} />
               </button>
               <button
                 onClick={nextSlide}
-                className="flex h-10 w-10 items-center justify-center border border-stone-300 text-stone-600 transition-colors hover:bg-stone-900 hover:text-white"
+                className="flex h-10 w-10 items-center justify-center border border-warm-300 text-warm-600 transition-colors hover:bg-warm-900 hover:text-white"
               >
                 <ChevronRight size={18} />
               </button>
@@ -493,25 +500,25 @@ function App() {
                       className="aspect-square w-full object-cover transition-transform duration-500 hover:scale-105"
                       onError={(e) => {
                         const target = e.target as HTMLImageElement
-                        target.src = 'https://placehold.co/600x600/1c1917/a8a29e/png?text=Style'
+                        target.src = 'https://placehold.co/600x600/2A241E/B8A68E/png?text=Style'
                       }}
                     />
                     <div className="p-6">
                       {pick.brand && (
-                        <p className="mb-1 text-xs font-medium tracking-wider uppercase text-stone-400">
+                        <p className="mb-1 text-xs font-medium tracking-wider uppercase text-warm-400">
                           {pick.brand}
                         </p>
                       )}
-                      <h3 className="text-base font-medium text-stone-900">
+                      <h3 className="text-base font-medium text-warm-900">
                         {pick.title}
                       </h3>
-                      <p className="mt-1 text-sm text-stone-500">{pick.desc}</p>
+                      <p className="mt-1 text-sm text-warm-500">{pick.desc}</p>
                       {pick.link && (
                         <a
                           href={pick.link}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="mt-3 inline-flex items-center gap-1.5 text-xs font-medium tracking-wide uppercase text-stone-900 transition-colors hover:text-stone-600"
+                          className="mt-3 inline-flex items-center gap-1.5 text-xs font-medium tracking-wide uppercase text-warm-900 transition-colors hover:text-warm-600"
                         >
                           Shop Now
                           <ExternalLink size={12} />
@@ -530,7 +537,7 @@ function App() {
                 key={i}
                 onClick={() => setCarouselIdx(i)}
                 className={`h-2 w-2 rounded-full transition-colors ${
-                  i === carouselIdx ? 'bg-stone-900' : 'bg-stone-300'
+                  i === carouselIdx ? 'bg-warm-900' : 'bg-warm-300'
                 }`}
               />
             ))}
@@ -542,32 +549,32 @@ function App() {
       <section id="faq" className="bg-white py-24 md:py-32">
         <div className="mx-auto max-w-3xl px-6 lg:px-8">
             <div className="mb-12 text-center">
-              <p className="mb-4 text-xs font-medium tracking-widest uppercase text-stone-400">
+              <p className="mb-4 text-xs font-medium tracking-widest uppercase text-warm-400">
                 FAQ
               </p>
-              <h3 className="text-3xl font-light text-stone-900 md:text-4xl">
+              <h3 className="font-serif text-3xl font-light text-warm-900 md:text-4xl">
                 Common questions.
               </h3>
             </div>
 
-            <div className="divide-y divide-stone-200">
+            <div className="divide-y divide-warm-200">
               {FAQ_ITEMS.map((item, i) => (
                 <div key={i} className="py-6">
                   <button
                     onClick={() => setOpenFaq(openFaq === i ? null : i)}
                     className="flex w-full items-center justify-between text-left"
                   >
-                    <span className="pr-4 text-base font-medium text-stone-900">
+                    <span className="pr-4 text-base font-medium text-warm-900">
                       {item.q}
                     </span>
                     {openFaq === i ? (
-                      <ChevronUp size={18} className="shrink-0 text-stone-400" />
+                      <ChevronUp size={18} className="shrink-0 text-warm-400" />
                     ) : (
-                      <ChevronDown size={18} className="shrink-0 text-stone-400" />
+                      <ChevronDown size={18} className="shrink-0 text-warm-400" />
                     )}
                   </button>
                   {openFaq === i && (
-                    <p className="mt-4 text-sm leading-relaxed text-stone-500">
+                    <p className="mt-4 text-sm leading-relaxed text-warm-500">
                       {item.a}
                     </p>
                   )}
@@ -578,15 +585,15 @@ function App() {
       </section>
 
       {/* Final CTA / Apply Section */}
-      <section id="apply" className="bg-stone-950 py-24 md:py-32">
+      <section id="apply" className="bg-warm-950 py-24 md:py-32">
         <div className="mx-auto max-w-3xl px-6 text-center lg:px-8">
-          <p className="mb-4 text-xs font-medium tracking-widest uppercase text-stone-500">
+          <p className="mb-4 text-xs font-medium tracking-widest uppercase text-warm-500">
             Get Started
           </p>
-          <h2 className="mb-6 text-3xl font-light text-stone-100 md:text-5xl">
+          <h2 className="mb-6 font-serif text-3xl font-light text-warm-100 md:text-5xl">
             Ready to elevate how you show up?
           </h2>
-          <p className="mb-12 text-base leading-relaxed text-stone-400">
+          <p className="mb-12 text-base leading-relaxed text-warm-400">
             Apply below and we'll schedule a free consultation to discuss your
             goals, style, and lifestyle. No obligation — just a conversation.
           </p>
@@ -599,32 +606,32 @@ function App() {
             className="mx-auto max-w-md space-y-5 text-left"
           >
             <div>
-              <label className="mb-1.5 block text-xs font-medium tracking-wide uppercase text-stone-500">
+              <label className="mb-1.5 block text-xs font-medium tracking-wide uppercase text-warm-500">
                 Name
               </label>
               <input
                 type="text"
                 required
-                className="w-full border border-stone-700 bg-stone-900 px-4 py-3.5 text-sm text-stone-100 outline-none placeholder:text-stone-600 focus:border-stone-500"
+                className="w-full border border-warm-700 bg-warm-900 px-4 py-3.5 text-sm text-warm-100 outline-none placeholder:text-warm-600 focus:border-warm-500"
                 placeholder="Your full name"
               />
             </div>
             <div>
-              <label className="mb-1.5 block text-xs font-medium tracking-wide uppercase text-stone-500">
+              <label className="mb-1.5 block text-xs font-medium tracking-wide uppercase text-warm-500">
                 Email
               </label>
               <input
                 type="email"
                 required
-                className="w-full border border-stone-700 bg-stone-900 px-4 py-3.5 text-sm text-stone-100 outline-none placeholder:text-stone-600 focus:border-stone-500"
+                className="w-full border border-warm-700 bg-warm-900 px-4 py-3.5 text-sm text-warm-100 outline-none placeholder:text-warm-600 focus:border-warm-500"
                 placeholder="you@company.com"
               />
             </div>
             <div>
-              <label className="mb-1.5 block text-xs font-medium tracking-wide uppercase text-stone-500">
+              <label className="mb-1.5 block text-xs font-medium tracking-wide uppercase text-warm-500">
                 What best describes you?
               </label>
-              <select className="w-full border border-stone-700 bg-stone-900 px-4 py-3.5 text-sm text-stone-100 outline-none focus:border-stone-500">
+              <select className="w-full border border-warm-700 bg-warm-900 px-4 py-3.5 text-sm text-warm-100 outline-none focus:border-warm-500">
                 <option value="">Select one</option>
                 <option value="founder">Founder / CEO</option>
                 <option value="engineer">Engineer / Technical</option>
@@ -635,10 +642,10 @@ function App() {
               </select>
             </div>
             <div>
-              <label className="mb-1.5 block text-xs font-medium tracking-wide uppercase text-stone-500">
+              <label className="mb-1.5 block text-xs font-medium tracking-wide uppercase text-warm-500">
                 What are you interested in?
               </label>
-              <select className="w-full border border-stone-700 bg-stone-900 px-4 py-3.5 text-sm text-stone-100 outline-none focus:border-stone-500">
+              <select className="w-full border border-warm-700 bg-warm-900 px-4 py-3.5 text-sm text-warm-100 outline-none focus:border-warm-500">
                 <option value="">Select one</option>
                 <option value="text-recs">Weekly text / email recommendations</option>
                 <option value="in-person">In-person styling sessions</option>
@@ -647,18 +654,18 @@ function App() {
               </select>
             </div>
             <div>
-              <label className="mb-1.5 block text-xs font-medium tracking-wide uppercase text-stone-500">
+              <label className="mb-1.5 block text-xs font-medium tracking-wide uppercase text-warm-500">
                 What are your style goals?
               </label>
               <textarea
                 rows={3}
-                className="w-full resize-none border border-stone-700 bg-stone-900 px-4 py-3.5 text-sm text-stone-100 outline-none placeholder:text-stone-600 focus:border-stone-500"
+                className="w-full resize-none border border-warm-700 bg-warm-900 px-4 py-3.5 text-sm text-warm-100 outline-none placeholder:text-warm-600 focus:border-warm-500"
                 placeholder="Tell us what you're looking to improve..."
               />
             </div>
             <button
               type="submit"
-              className="group mt-4 flex w-full items-center justify-center gap-2 bg-stone-100 py-4 text-xs font-medium tracking-wider uppercase text-stone-950 transition-all hover:bg-white"
+              className="group mt-4 flex w-full items-center justify-center gap-2 bg-warm-100 py-4 text-xs font-medium tracking-wider uppercase text-warm-950 transition-all hover:bg-white"
             >
               Submit Application
               <ArrowRight
@@ -671,10 +678,10 @@ function App() {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-stone-800 bg-stone-950 py-12">
+      <footer className="border-t border-warm-800 bg-warm-950 py-12">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
-            <p className="text-sm font-normal tracking-widest uppercase text-stone-400">
+            <p className="text-sm font-normal tracking-widest uppercase text-warm-400">
               Uniform
             </p>
             <div className="flex gap-8">
@@ -682,13 +689,13 @@ function App() {
                 <button
                   key={link}
                   onClick={() => scrollTo(link.toLowerCase())}
-                  className="text-xs tracking-wide text-stone-500 transition-colors hover:text-stone-300"
+                  className="text-xs tracking-wide text-warm-500 transition-colors hover:text-warm-300"
                 >
                   {link}
                 </button>
               ))}
             </div>
-            <p className="text-xs text-stone-600">
+            <p className="text-xs text-warm-600">
               &copy; {new Date().getFullYear()} Uniform Styling. NYC & SF.
             </p>
           </div>
