@@ -55,6 +55,13 @@ const STYLE_PICKS = [
     link: 'https://www.cos.com/en-us/men/menswear/shirts/casualshirts/product/relaxed-linen-shirt-khaki-1146543021',
   },
   {
+    title: 'Dice Lo Sneaker',
+    brand: 'Axel Arigato',
+    desc: 'Minimalist leather sneaker \u2014 the everyday essential.',
+    img: '/images/axel-arigato-dice.webp',
+    link: 'https://axelarigato.com/men/footwear/dice/dice-lo-sneaker-f4285002',
+  },
+  {
     title: 'The Quiet Power Blazer',
     brand: 'COS',
     desc: 'Unstructured, breathable, board-room ready.',
