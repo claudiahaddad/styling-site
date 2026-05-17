@@ -2,47 +2,47 @@ import { useState } from 'react'
 import './App.css'
 import {
   ArrowRight,
-  Check,
   ChevronDown,
+  ChevronLeft,
+  ChevronRight,
   ChevronUp,
   Menu,
   Minus,
   X,
 } from 'lucide-react'
 
-const NAV_LINKS = ['About', 'Philosophy', 'Packages']
+const NAV_LINKS = ['About', 'Philosophy', 'Styles', 'FAQ']
 
-const PACKAGES = [
+const STYLE_PICKS = [
   {
-    name: 'Essential Refresh',
-    price: 'Starting at $500',
-    features: [
-      'Style consultation',
-      'Wardrobe recommendations',
-      'Curated shopping list',
-      'Outfit guidance',
-    ],
+    title: 'The Quiet Power Blazer',
+    desc: 'Unstructured, breathable, board-room ready.',
+    img: '/images/style1.jpg',
   },
   {
-    name: 'Executive Upgrade',
-    price: 'Starting at $1,500',
-    features: [
-      'Full wardrobe strategy',
-      'Personalized shopping links',
-      'Occasion-specific outfits',
-      'Async support',
-    ],
-    featured: true,
+    title: 'Elevated Essentials',
+    desc: 'Premium basics that anchor every outfit.',
+    img: '/images/style2.jpg',
   },
   {
-    name: 'Concierge Styling',
-    price: 'Custom Pricing',
-    features: [
-      'Ongoing styling support',
-      'Event / date / travel styling',
-      'Seasonal refreshes',
-      'High-touch experience',
-    ],
+    title: 'Weekend to Dinner',
+    desc: 'One look that transitions seamlessly.',
+    img: '/images/style3.jpg',
+  },
+  {
+    title: 'The Founder Uniform',
+    desc: 'Clean lines, zero decision fatigue.',
+    img: '/images/style4.jpg',
+  },
+  {
+    title: 'Travel-Ready Layers',
+    desc: 'Pack light, look sharp anywhere.',
+    img: '/images/style5.jpg',
+  },
+  {
+    title: 'Date Night Done Right',
+    desc: 'Effortlessly polished for after hours.',
+    img: '/images/style6.jpg',
   },
 ]
 
@@ -69,6 +69,10 @@ const TESTIMONIALS = [
 
 const FAQ_ITEMS = [
   {
+    q: 'What options do you offer?',
+    a: "We're flexible depending on your needs. Whether you want a few email or text recommendations each week, in-person styling sessions, or an at-home try-on and feedback session to make better use of what you have.",
+  },
+  {
     q: 'Do you work with clients remotely?',
     a: 'Yes. Most of our clients are remote. We work via video calls, curated shopping links, and async communication.',
   },
@@ -82,7 +86,7 @@ const FAQ_ITEMS = [
   },
   {
     q: 'How long does the process take?',
-    a: 'The Essential Refresh is typically completed in 1\u20132 weeks. Executive and Concierge packages are ongoing relationships.',
+    a: 'Most clients see a complete wardrobe transformation within 1\u20132 weeks. Ongoing styling relationships are available for those who want continued support.',
   },
   {
     q: "I have zero fashion sense. Is that okay?",
@@ -93,6 +97,12 @@ const FAQ_ITEMS = [
 function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [openFaq, setOpenFaq] = useState<number | null>(null)
+  const [carouselIdx, setCarouselIdx] = useState(0)
+
+  const nextSlide = () =>
+    setCarouselIdx((prev) => (prev + 1) % STYLE_PICKS.length)
+  const prevSlide = () =>
+    setCarouselIdx((prev) => (prev - 1 + STYLE_PICKS.length) % STYLE_PICKS.length)
 
   const scrollTo = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
@@ -360,79 +370,83 @@ function App() {
         </div>
       </section>
 
-      {/* Packages & FAQ Section */}
-      <section id="packages" className="bg-white py-24 md:py-32">
+      {/* Styles We Love This Month */}
+      <section id="styles" className="bg-stone-50 py-24 md:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mb-16 text-center">
-            <p className="mb-4 text-xs font-medium tracking-widest uppercase text-stone-400">
-              Packages
-            </p>
-            <h2 className="mb-4 text-3xl font-light text-stone-900 md:text-4xl">
-              Choose your level.
-            </h2>
-            <p className="mx-auto max-w-xl text-base text-stone-500">
-              Every engagement starts with a conversation. Pick the package that
-              fits where you are — we'll handle the rest.
-            </p>
+          <div className="mb-16 flex items-end justify-between">
+            <div>
+              <p className="mb-4 text-xs font-medium tracking-widest uppercase text-stone-400">
+                This Month
+              </p>
+              <h2 className="text-3xl font-light text-stone-900 md:text-4xl">
+                Styles we love.
+              </h2>
+            </div>
+            <div className="hidden gap-3 md:flex">
+              <button
+                onClick={prevSlide}
+                className="flex h-10 w-10 items-center justify-center border border-stone-300 text-stone-600 transition-colors hover:bg-stone-900 hover:text-white"
+              >
+                <ChevronLeft size={18} />
+              </button>
+              <button
+                onClick={nextSlide}
+                className="flex h-10 w-10 items-center justify-center border border-stone-300 text-stone-600 transition-colors hover:bg-stone-900 hover:text-white"
+              >
+                <ChevronRight size={18} />
+              </button>
+            </div>
           </div>
 
-          <div className="grid gap-6 lg:grid-cols-3">
-            {PACKAGES.map((pkg) => (
-              <div
-                key={pkg.name}
-                className={`relative flex flex-col border p-10 transition-all ${
-                  pkg.featured
-                    ? 'border-stone-900 bg-stone-950 text-stone-100'
-                    : 'border-stone-200 bg-white text-stone-900 hover:border-stone-400'
+          <div className="overflow-hidden">
+            <div
+              className="flex gap-6 transition-transform duration-500 ease-in-out"
+              style={{ transform: `translateX(-${carouselIdx * (100 / 3)}%)` }}
+            >
+              {STYLE_PICKS.map((pick) => (
+                <div
+                  key={pick.title}
+                  className="w-full shrink-0 md:w-1/3"
+                >
+                  <div className="overflow-hidden bg-white">
+                    <img
+                      src={pick.img}
+                      alt={pick.title}
+                      className="aspect-square w-full object-cover transition-transform duration-500 hover:scale-105"
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement
+                        target.src = 'https://placehold.co/600x600/1c1917/a8a29e/png?text=Style'
+                      }}
+                    />
+                    <div className="p-6">
+                      <h3 className="text-base font-medium text-stone-900">
+                        {pick.title}
+                      </h3>
+                      <p className="mt-1 text-sm text-stone-500">{pick.desc}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="mt-8 flex justify-center gap-2 md:hidden">
+            {STYLE_PICKS.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setCarouselIdx(i)}
+                className={`h-2 w-2 rounded-full transition-colors ${
+                  i === carouselIdx ? 'bg-stone-900' : 'bg-stone-300'
                 }`}
-              >
-                {pkg.featured && (
-                  <span className="absolute -top-3 left-10 bg-stone-100 px-4 py-1 text-xs font-medium tracking-wider uppercase text-stone-900">
-                    Most Popular
-                  </span>
-                )}
-                <h3 className="text-lg font-medium tracking-wide">{pkg.name}</h3>
-                <p
-                  className={`mt-2 text-sm ${
-                    pkg.featured ? 'text-stone-400' : 'text-stone-500'
-                  }`}
-                >
-                  {pkg.price}
-                </p>
-                <div className="my-8 h-px w-full bg-current opacity-10" />
-                <ul className="flex-1 space-y-4">
-                  {pkg.features.map((feature) => (
-                    <li key={feature} className="flex items-start gap-3">
-                      <Check
-                        size={16}
-                        className="mt-0.5 shrink-0 text-stone-400"
-                      />
-                      <span
-                        className={`text-sm ${
-                          pkg.featured ? 'text-stone-300' : 'text-stone-600'
-                        }`}
-                      >
-                        {feature}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-                <button
-                  onClick={() => scrollTo('apply')}
-                  className={`mt-10 w-full py-3.5 text-xs font-medium tracking-wider uppercase transition-all ${
-                    pkg.featured
-                      ? 'bg-stone-100 text-stone-950 hover:bg-white'
-                      : 'border border-stone-900 text-stone-900 hover:bg-stone-900 hover:text-white'
-                  }`}
-                >
-                  Apply Now
-                </button>
-              </div>
+              />
             ))}
           </div>
+        </div>
+      </section>
 
-          {/* FAQ within Packages */}
-          <div className="mx-auto mt-24 max-w-3xl border-t border-stone-200 pt-24">
+      {/* FAQ Section */}
+      <section id="faq" className="bg-white py-24 md:py-32">
+        <div className="mx-auto max-w-3xl px-6 lg:px-8">
             <div className="mb-12 text-center">
               <p className="mb-4 text-xs font-medium tracking-widest uppercase text-stone-400">
                 FAQ
@@ -466,7 +480,6 @@ function App() {
                 </div>
               ))}
             </div>
-          </div>
         </div>
       </section>
 
@@ -529,13 +542,13 @@ function App() {
             </div>
             <div>
               <label className="mb-1.5 block text-xs font-medium tracking-wide uppercase text-stone-500">
-                Package Interest
+                What are you interested in?
               </label>
               <select className="w-full border border-stone-700 bg-stone-900 px-4 py-3.5 text-sm text-stone-100 outline-none focus:border-stone-500">
-                <option value="">Select a package</option>
-                <option value="essential">Essential Refresh — $500</option>
-                <option value="executive">Executive Upgrade — $1,500</option>
-                <option value="concierge">Concierge Styling — Custom</option>
+                <option value="">Select one</option>
+                <option value="text-recs">Weekly text / email recommendations</option>
+                <option value="in-person">In-person styling sessions</option>
+                <option value="at-home">At-home try-on & feedback</option>
                 <option value="unsure">Not sure yet</option>
               </select>
             </div>
