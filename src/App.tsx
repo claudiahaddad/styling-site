@@ -2,47 +2,71 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 import './App.css'
 import {
   ArrowRight,
+  Briefcase,
   ChevronDown,
   ChevronLeft,
   ChevronRight,
   ChevronUp,
+  ExternalLink,
+  GlassWater,
   Menu,
   Minus,
+  Sparkles,
+  Sun,
   X,
 } from 'lucide-react'
 
 const NAV_LINKS = ['About', 'Philosophy', 'Styles', 'FAQ']
 
+const WARDROBE_CATEGORIES = [
+  { name: 'Work', desc: 'Boardrooms to standups', icon: Briefcase },
+  { name: 'Casual', desc: 'Effortless everyday', icon: Sun },
+  { name: 'Night Out', desc: 'Dates, dinners & drinks', icon: GlassWater },
+  { name: 'Formal Events', desc: 'Galas, weddings & more', icon: Sparkles },
+]
+
 const STYLE_PICKS = [
   {
-    title: 'The Quiet Power Blazer',
-    desc: 'Unstructured, breathable, board-room ready.',
-    img: '/images/style1.jpg',
+    title: 'ALD Crest Quarter-Zip',
+    brand: 'Aim\u00e9 Leon Dore',
+    desc: 'The perfect layering piece for spring.',
+    img: '/images/ald-pullover.jpg',
+    link: 'https://www.aimeleondore.com/products/crest-quarter-zip-pullover-14',
   },
   {
-    title: 'Elevated Essentials',
+    title: 'Cotton Knit Polo Sweater',
+    brand: 'Massimo Dutti',
+    desc: 'Refined knit polo — office to evening.',
+    img: '/images/md-polo-sweater.webp',
+    link: 'https://www.massimodutti.com/us/cotton-knit-polo-sweater-l01210201',
+  },
+  {
+    title: 'The Quiet Power Blazer',
+    brand: 'COS',
+    desc: 'Unstructured, breathable, board-room ready.',
+    img: '/images/style1.jpg',
+    link: '',
+  },
+  {
+    title: 'Elevated Essentials Tee',
+    brand: 'Reigning Champ',
     desc: 'Premium basics that anchor every outfit.',
     img: '/images/style2.jpg',
+    link: '',
   },
   {
     title: 'Weekend to Dinner',
+    brand: 'APC',
     desc: 'One look that transitions seamlessly.',
     img: '/images/style3.jpg',
+    link: '',
   },
   {
     title: 'The Founder Uniform',
+    brand: 'COS',
     desc: 'Clean lines, zero decision fatigue.',
     img: '/images/style4.jpg',
-  },
-  {
-    title: 'Travel-Ready Layers',
-    desc: 'Pack light, look sharp anywhere.',
-    img: '/images/style5.jpg',
-  },
-  {
-    title: 'Date Night Done Right',
-    desc: 'Effortlessly polished for after hours.',
-    img: '/images/style6.jpg',
+    link: '',
   },
 ]
 
@@ -385,13 +409,46 @@ function App() {
         </div>
       </section>
 
-      {/* Styles We Love This Month */}
+      {/* For All Your Wardrobe Needs */}
+      <section className="bg-white py-24 md:py-32">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="mb-16 text-center">
+            <p className="mb-4 text-xs font-medium tracking-widest uppercase text-stone-400">
+              Services
+            </p>
+            <h2 className="text-3xl font-light text-stone-900 md:text-4xl">
+              For all your wardrobe needs.
+            </h2>
+          </div>
+
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {WARDROBE_CATEGORIES.map((cat) => (
+              <div
+                key={cat.name}
+                className="group flex flex-col items-center border border-stone-200 bg-stone-50 p-10 text-center transition-all hover:border-stone-400 hover:bg-stone-100"
+              >
+                <cat.icon
+                  size={28}
+                  className="mb-5 text-stone-400 transition-colors group-hover:text-stone-900"
+                  strokeWidth={1.5}
+                />
+                <h3 className="text-base font-medium tracking-wide text-stone-900">
+                  {cat.name}
+                </h3>
+                <p className="mt-2 text-sm text-stone-500">{cat.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Styles We Love */}
       <section id="styles" className="bg-stone-50 py-24 md:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mb-16 flex items-end justify-between">
             <div>
               <p className="mb-4 text-xs font-medium tracking-widest uppercase text-stone-400">
-                This Month
+                This Spring
               </p>
               <h2 className="text-3xl font-light text-stone-900 md:text-4xl">
                 Styles we love.
@@ -440,10 +497,26 @@ function App() {
                       }}
                     />
                     <div className="p-6">
+                      {pick.brand && (
+                        <p className="mb-1 text-xs font-medium tracking-wider uppercase text-stone-400">
+                          {pick.brand}
+                        </p>
+                      )}
                       <h3 className="text-base font-medium text-stone-900">
                         {pick.title}
                       </h3>
                       <p className="mt-1 text-sm text-stone-500">{pick.desc}</p>
+                      {pick.link && (
+                        <a
+                          href={pick.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="mt-3 inline-flex items-center gap-1.5 text-xs font-medium tracking-wide uppercase text-stone-900 transition-colors hover:text-stone-600"
+                        >
+                          Shop Now
+                          <ExternalLink size={12} />
+                        </a>
+                      )}
                     </div>
                   </div>
                 </div>
