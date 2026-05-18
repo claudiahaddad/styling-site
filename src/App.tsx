@@ -241,8 +241,88 @@ function App() {
         </div>
       </section>
 
+      {/* Problem / Emotional Resonance */}
+      <section className="bg-white py-16 md:py-20">
+        <div className="mx-auto max-w-4xl px-6 text-center lg:px-8">
+          <p className="mb-6 text-xs font-medium tracking-widest uppercase text-warm-400">
+            Sound familiar?
+          </p>
+          <h2 className="mb-8 font-serif text-3xl font-light leading-snug text-warm-900 md:text-4xl">
+            Does this sound familiar?
+          </h2>
+          <div className="mx-auto mb-12 max-w-2xl space-y-4 text-base leading-relaxed text-warm-600">
+            <p>
+              You've built a life you're proud of — but getting dressed still
+              feels harder than it should.
+            </p>
+            <p>
+              You want to look polished and confident without spending hours
+              thinking about clothes, trends, or what works for you.
+            </p>
+          </div>
+          <div className="mx-auto grid max-w-3xl gap-6 text-left md:grid-cols-2">
+            {[
+              'You want to walk into rooms feeling confident, not overdressed',
+              'Getting dressed still feels inconsistent or overly complicated',
+              'You\'re tired of overthinking what to wear for dinners, dates, events, and everyday life',
+              'You want a wardrobe that feels effortless, versatile, and distinctly your own',
+              'You value quality and simplicity over trends and logos',
+              'You\'re ready to invest in how you show up',
+            ].map((item) => (
+              <div key={item} className="flex items-start gap-3">
+                <Minus size={16} className="mt-1 shrink-0 text-warm-300" />
+                <p className="text-base leading-relaxed text-warm-600">{item}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section id="about" className="bg-warm-50 py-16 md:py-20">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="grid items-center gap-16 lg:grid-cols-2">
+            <div className="overflow-hidden">
+              <img
+                src="/images/builders-street.jpeg"
+                alt="Man in fitted black tee and tailored trousers - built for builders"
+                className="h-full w-full object-cover"
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement
+                  target.src = 'https://placehold.co/800x1000/2A241E/B8A68E/png?text=About'
+                }}
+              />
+            </div>
+
+            <div>
+              <p className="mb-4 text-xs font-medium tracking-widest uppercase text-warm-400">
+                About
+              </p>
+              <h2 className="mb-8 font-serif text-3xl font-light text-warm-900 md:text-4xl">
+                Style that feels effortless.
+              </h2>
+              <div className="space-y-6 text-base leading-relaxed text-warm-500">
+                <p>
+                  We work with ambitious men who care about how they show up —
+                  but don't want fashion to become a full-time hobby.
+                </p>
+                <p>
+                  Our approach is simple: fewer, better pieces, thoughtful
+                  styling, and a wardrobe designed around your actual life.
+                </p>
+                <p>
+                  Whether it's dinners, dates, investor meetings, travel, or
+                  everyday routines, we help you build a personal style that
+                  feels polished, understated, and easy to wear with confidence.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Founders Section */}
-      <section className="bg-warm-50 py-14 md:py-20">
+      <section className="bg-warm-50 py-12 md:py-16">
         <div className="mx-auto max-w-3xl px-6 lg:px-8">
           <p className="mb-3 text-xs font-medium tracking-widest uppercase text-warm-400">
             Meet the Founders
@@ -275,110 +355,8 @@ function App() {
         </div>
       </section>
 
-      {/* Problem / Emotional Resonance */}
-      <section className="bg-white py-24 md:py-32">
-        <div className="mx-auto max-w-4xl px-6 text-center lg:px-8">
-          <p className="mb-6 text-xs font-medium tracking-widest uppercase text-warm-400">
-            Sound familiar?
-          </p>
-          <h2 className="mb-12 font-serif text-3xl font-light leading-snug text-warm-900 md:text-4xl">
-            You've optimized everything in your career.{' '}
-            <span className="text-warm-400">
-              But when it comes to how you present yourself, you're still
-              winging it.
-            </span>
-          </h2>
-          <div className="mx-auto grid max-w-3xl gap-6 text-left md:grid-cols-2">
-            {[
-              'High income, low confidence in personal style',
-              'Decision fatigue around what to wear',
-              'Want to look polished — not "fashionable"',
-              'No time to make clothing a project',
-              'Underdressed for dates, dinners, and conferences',
-              'Ready to invest in how you show up',
-            ].map((item) => (
-              <div key={item} className="flex items-start gap-3">
-                <Minus size={16} className="mt-1 shrink-0 text-warm-300" />
-                <p className="text-base leading-relaxed text-warm-600">{item}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* About Section */}
-      <section id="about" className="bg-warm-50 py-24 md:py-32">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="grid items-center gap-16 lg:grid-cols-2">
-            <div className="overflow-hidden">
-              <img
-                src="/images/about.jpg"
-                alt="Stylist portrait"
-                className="h-full w-full object-cover"
-                onError={(e) => {
-                  const target = e.target as HTMLImageElement
-                  target.src = 'https://placehold.co/800x1000/2A241E/B8A68E/png?text=About'
-                }}
-              />
-            </div>
-
-            <div>
-              <p className="mb-4 text-xs font-medium tracking-widest uppercase text-warm-400">
-                About
-              </p>
-              <h2 className="mb-8 font-serif text-3xl font-light text-warm-900 md:text-4xl">
-                Built for builders.
-              </h2>
-              <div className="space-y-6 text-base leading-relaxed text-warm-500">
-                <p>
-                  We understand the world you operate in — the board meetings
-                  that require gravitas, the investor dinners where first
-                  impressions close deals, and the daily grind where you need to
-                  feel sharp without thinking about it.
-                </p>
-                <p>
-                  This isn't generic fashion advice. It's a system designed for
-                  ambitious men in tech who want fewer decisions, better
-                  outcomes, and a wardrobe that matches their trajectory.
-                </p>
-                <p>
-                  Based in NYC and SF, we work with founders, engineers, PMs,
-                  and executives who are ready to invest in how they show up.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* Testimonials within About */}
-          <div className="mt-24 border-t border-warm-200 pt-24">
-            <p className="mb-4 text-xs font-medium tracking-widest uppercase text-warm-400">
-              Results
-            </p>
-            <h3 className="mb-12 font-serif text-3xl font-light text-warm-900 md:text-4xl">
-              From our clients.
-            </h3>
-            <div className="grid gap-8 lg:grid-cols-3">
-              {TESTIMONIALS.map((t) => (
-                <div
-                  key={t.name}
-                  className="flex flex-col border border-warm-200 bg-white p-10"
-                >
-                  <p className="flex-1 text-base leading-relaxed text-warm-600">
-                    "{t.quote}"
-                  </p>
-                  <div className="mt-8 border-t border-warm-100 pt-6">
-                    <p className="text-sm font-medium text-warm-900">{t.name}</p>
-                    <p className="mt-1 text-xs text-warm-400">{t.role}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Transformation Philosophy */}
-      <section id="philosophy" className="bg-warm-950 py-24 md:py-32">
+      <section id="philosophy" className="bg-warm-950 py-16 md:py-20">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid items-center gap-16 lg:grid-cols-2">
             <div>
@@ -417,8 +395,8 @@ function App() {
 
             <div className="overflow-hidden">
               <img
-                src="/images/transform.jpg"
-                alt="Elevated menswear aesthetic"
+                src="/images/confidence-street.jpeg"
+                alt="Street style - confidence through simplicity"
                 className="h-full w-full object-cover"
                 onError={(e) => {
                   const target = e.target as HTMLImageElement
@@ -431,7 +409,7 @@ function App() {
       </section>
 
       {/* For All Your Wardrobe Needs */}
-      <section className="bg-white py-24 md:py-32">
+      <section className="bg-white py-16 md:py-20">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mb-16 text-center">
             <p className="mb-4 text-xs font-medium tracking-widest uppercase text-warm-400">
@@ -464,7 +442,7 @@ function App() {
       </section>
 
       {/* Styles We Love */}
-      <section id="styles" className="bg-warm-50 py-24 md:py-32">
+      <section id="styles" className="bg-warm-50 py-16 md:py-20">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mb-16 flex items-end justify-between">
             <div>
@@ -560,7 +538,7 @@ function App() {
       </section>
 
       {/* FAQ Section */}
-      <section id="faq" className="bg-white py-24 md:py-32">
+      <section id="faq" className="bg-white py-16 md:py-20">
         <div className="mx-auto max-w-3xl px-6 lg:px-8">
             <div className="mb-12 text-center">
               <p className="mb-4 text-xs font-medium tracking-widest uppercase text-warm-400">
@@ -598,8 +576,36 @@ function App() {
         </div>
       </section>
 
+      {/* Testimonials */}
+      <section className="bg-warm-50 py-16 md:py-20">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <p className="mb-4 text-xs font-medium tracking-widest uppercase text-warm-400">
+            Results
+          </p>
+          <h2 className="mb-12 font-serif text-3xl font-light text-warm-900 md:text-4xl">
+            From our clients.
+          </h2>
+          <div className="grid gap-8 lg:grid-cols-3">
+            {TESTIMONIALS.map((t) => (
+              <div
+                key={t.name}
+                className="flex flex-col border border-warm-200 bg-white p-10"
+              >
+                <p className="flex-1 text-base leading-relaxed text-warm-600">
+                  "{t.quote}"
+                </p>
+                <div className="mt-8 border-t border-warm-100 pt-6">
+                  <p className="text-sm font-medium text-warm-900">{t.name}</p>
+                  <p className="mt-1 text-xs text-warm-400">{t.role}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Final CTA / Apply Section */}
-      <section id="apply" className="bg-warm-950 py-24 md:py-32">
+      <section id="apply" className="bg-warm-950 py-16 md:py-20">
         <div className="mx-auto max-w-3xl px-6 text-center lg:px-8">
           <p className="mb-4 text-xs font-medium tracking-widest uppercase text-warm-500">
             Get Started
