@@ -188,7 +188,7 @@ function App() {
               onClick={() => scrollTo('apply')}
               className="border border-warm-100 px-7 py-2.5 text-xs font-medium tracking-wider uppercase text-warm-100 transition-all hover:bg-warm-100 hover:text-warm-950"
             >
-              Apply Now
+              Get in Touch
             </button>
           </div>
 
@@ -215,7 +215,7 @@ function App() {
               onClick={() => scrollTo('apply')}
               className="mt-4 w-full border border-warm-100 py-3 text-xs font-medium tracking-wider uppercase text-warm-100"
             >
-              Apply Now
+              Get in Touch
             </button>
           </div>
         )}
@@ -245,7 +245,7 @@ function App() {
               onClick={() => scrollTo('apply')}
               className="group inline-flex items-center gap-3 bg-warm-100 px-10 py-4 text-xs font-medium tracking-wider uppercase text-warm-950 transition-all hover:bg-white"
             >
-              Apply Now
+              Get in Touch
               <ArrowRight
                 size={14}
                 className="transition-transform group-hover:translate-x-1"
@@ -622,14 +622,14 @@ function App() {
             Ready to elevate how you show up?
           </h2>
           <p className="mb-12 text-base leading-relaxed text-warm-400">
-            Apply below and we'll schedule a free consultation to discuss your
+            Reach out and we'll schedule a free consultation to discuss your
             goals, style, and lifestyle. No obligation — just a conversation.
           </p>
 
           <form
             onSubmit={(e) => {
               e.preventDefault()
-              alert("Thank you for applying. We'll be in touch within 24 hours.")
+              alert("Thank you for reaching out. We'll be in touch within 24 hours.")
             }}
             className="mx-auto max-w-md space-y-5 text-left"
           >
@@ -695,7 +695,7 @@ function App() {
               type="submit"
               className="group mt-4 flex w-full items-center justify-center gap-2 bg-warm-100 py-4 text-xs font-medium tracking-wider uppercase text-warm-950 transition-all hover:bg-white"
             >
-              Submit Application
+              Get in Touch
               <ArrowRight
                 size={14}
                 className="transition-transform group-hover:translate-x-1"
