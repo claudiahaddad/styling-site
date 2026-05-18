@@ -330,23 +330,21 @@ function App() {
                 About
               </p>
               <h2 className="mb-8 font-serif text-3xl font-light text-warm-900 md:text-4xl">
-                Built for builders.
+                Style that feels effortless.
               </h2>
               <div className="space-y-6 text-base leading-relaxed text-warm-500">
                 <p>
-                  We understand the world you operate in — the board meetings
-                  that require gravitas, the investor dinners where first
-                  impressions close deals, and the daily grind where you need to
-                  feel sharp without thinking about it.
+                  We work with ambitious men who care about how they show up —
+                  but don't want fashion to become a full-time hobby.
                 </p>
                 <p>
-                  This isn't generic fashion advice. It's a system designed for
-                  ambitious men in tech who want fewer decisions, better
-                  outcomes, and a wardrobe that matches their trajectory.
+                  Our approach is simple: fewer, better pieces, thoughtful
+                  styling, and a wardrobe designed around your actual life.
                 </p>
                 <p>
-                  Based in NYC and SF, we work with founders, engineers, PMs,
-                  and executives who are ready to invest in how they show up.
+                  Whether it's dinners, dates, investor meetings, travel, or
+                  everyday routines, we help you build a personal style that
+                  feels polished, understated, and easy to wear with confidence.
                 </p>
               </div>
             </div>
