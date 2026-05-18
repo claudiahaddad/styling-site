@@ -224,20 +224,20 @@ function App() {
       {/* Hero Section */}
       <section
         id="hero"
-        className="relative flex min-h-screen items-center bg-warm-950"
+        className="relative flex items-center bg-warm-950 pt-28 pb-16 md:pt-36 md:pb-24"
       >
-        <div className="relative z-10 mx-auto max-w-7xl px-6 py-32 lg:px-8">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="max-w-3xl">
-            <p className="mb-6 text-xs font-medium tracking-widest uppercase text-warm-400">
+            <p className="mb-4 text-xs font-medium tracking-widest uppercase text-warm-400">
               Personal styling for ambitious men in tech — by Uniform
             </p>
-            <h1 className="mb-8 font-serif text-5xl leading-none font-light tracking-tight text-warm-100 md:text-7xl lg:text-8xl">
+            <h1 className="mb-6 font-serif text-4xl leading-tight font-light tracking-tight text-warm-100 md:text-6xl lg:text-7xl">
               Look like the person{' '}
               <span className="italic text-warm-300">
                 you're becoming.
               </span>
             </h1>
-            <p className="mb-12 max-w-xl text-lg leading-relaxed font-light text-warm-400">
+            <p className="mb-8 max-w-xl text-base leading-relaxed font-light text-warm-400">
               Executive presence through personal style. For founders, builders,
               and operators who want to show up with confidence — without
               fashion becoming a hobby.
