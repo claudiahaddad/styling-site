@@ -226,18 +226,6 @@ function App() {
         id="hero"
         className="relative flex min-h-screen items-center bg-warm-950"
       >
-        <div className="absolute inset-0">
-          <img
-            src="/images/hero.jpg"
-            alt="Well-dressed man in minimalist setting"
-            className="h-full w-full object-cover opacity-40"
-            onError={(e) => {
-              const target = e.target as HTMLImageElement
-              target.src = 'https://placehold.co/1920x1080/2A241E/B8A68E/png?text=STYLED'
-            }}
-          />
-        </div>
-
         <div className="relative z-10 mx-auto max-w-7xl px-6 py-32 lg:px-8">
           <div className="max-w-3xl">
             <p className="mb-6 text-xs font-medium tracking-widest uppercase text-warm-400">
