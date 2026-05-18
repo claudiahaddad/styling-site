@@ -417,8 +417,8 @@ function App() {
 
             <div className="overflow-hidden">
               <img
-                src="/images/transform.jpg"
-                alt="Elevated menswear aesthetic"
+                src="/images/confidence-street.jpeg"
+                alt="Street style - confidence through simplicity"
                 className="h-full w-full object-cover"
                 onError={(e) => {
                   const target = e.target as HTMLImageElement
