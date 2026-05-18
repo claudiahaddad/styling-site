@@ -330,51 +330,23 @@ function App() {
                 About
               </p>
               <h2 className="mb-8 font-serif text-3xl font-light text-warm-900 md:text-4xl">
-                Built for builders.
+                Style that feels effortless.
               </h2>
               <div className="space-y-6 text-base leading-relaxed text-warm-500">
                 <p>
-                  We understand the world you operate in — the board meetings
-                  that require gravitas, the investor dinners where first
-                  impressions close deals, and the daily grind where you need to
-                  feel sharp without thinking about it.
+                  We work with ambitious men who care about how they show up —
+                  but don't want fashion to become a full-time hobby.
                 </p>
                 <p>
-                  This isn't generic fashion advice. It's a system designed for
-                  ambitious men in tech who want fewer decisions, better
-                  outcomes, and a wardrobe that matches their trajectory.
+                  Our approach is simple: fewer, better pieces, thoughtful
+                  styling, and a wardrobe designed around your actual life.
                 </p>
                 <p>
-                  Based in NYC and SF, we work with founders, engineers, PMs,
-                  and executives who are ready to invest in how they show up.
+                  Whether it's dinners, dates, investor meetings, travel, or
+                  everyday routines, we help you build a personal style that
+                  feels polished, understated, and easy to wear with confidence.
                 </p>
               </div>
-            </div>
-          </div>
-
-          {/* Testimonials within About */}
-          <div className="mt-24 border-t border-warm-200 pt-24">
-            <p className="mb-4 text-xs font-medium tracking-widest uppercase text-warm-400">
-              Results
-            </p>
-            <h3 className="mb-12 font-serif text-3xl font-light text-warm-900 md:text-4xl">
-              From our clients.
-            </h3>
-            <div className="grid gap-8 lg:grid-cols-3">
-              {TESTIMONIALS.map((t) => (
-                <div
-                  key={t.name}
-                  className="flex flex-col border border-warm-200 bg-white p-10"
-                >
-                  <p className="flex-1 text-base leading-relaxed text-warm-600">
-                    "{t.quote}"
-                  </p>
-                  <div className="mt-8 border-t border-warm-100 pt-6">
-                    <p className="text-sm font-medium text-warm-900">{t.name}</p>
-                    <p className="mt-1 text-xs text-warm-400">{t.role}</p>
-                  </div>
-                </div>
-              ))}
             </div>
           </div>
         </div>
@@ -598,6 +570,34 @@ function App() {
                 </div>
               ))}
             </div>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section className="bg-warm-50 py-24 md:py-32">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <p className="mb-4 text-xs font-medium tracking-widest uppercase text-warm-400">
+            Results
+          </p>
+          <h2 className="mb-12 font-serif text-3xl font-light text-warm-900 md:text-4xl">
+            From our clients.
+          </h2>
+          <div className="grid gap-8 lg:grid-cols-3">
+            {TESTIMONIALS.map((t) => (
+              <div
+                key={t.name}
+                className="flex flex-col border border-warm-200 bg-white p-10"
+              >
+                <p className="flex-1 text-base leading-relaxed text-warm-600">
+                  "{t.quote}"
+                </p>
+                <div className="mt-8 border-t border-warm-100 pt-6">
+                  <p className="text-sm font-medium text-warm-900">{t.name}</p>
+                  <p className="mt-1 text-xs text-warm-400">{t.role}</p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
