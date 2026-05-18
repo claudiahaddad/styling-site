@@ -62,20 +62,6 @@ const STYLE_PICKS = [
     link: 'https://axelarigato.com/men/footwear/dice/dice-lo-sneaker-f4285002',
   },
   {
-    title: 'The Quiet Power Blazer',
-    brand: 'COS',
-    desc: 'Unstructured, breathable, board-room ready.',
-    img: '/images/style1.jpg',
-    link: '',
-  },
-  {
-    title: 'Elevated Essentials Tee',
-    brand: 'Reigning Champ',
-    desc: 'Premium basics that anchor every outfit.',
-    img: '/images/style2.jpg',
-    link: '',
-  },
-  {
     title: 'Weekend to Dinner',
     brand: 'APC',
     desc: 'One look that transitions seamlessly.',
