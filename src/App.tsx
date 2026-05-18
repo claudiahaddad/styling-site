@@ -315,8 +315,8 @@ function App() {
           <div className="grid items-center gap-16 lg:grid-cols-2">
             <div className="overflow-hidden">
               <img
-                src="/images/about.jpg"
-                alt="Stylist portrait"
+                src="/images/builders-street.jpeg"
+                alt="Man in fitted black tee and tailored trousers - built for builders"
                 className="h-full w-full object-cover"
                 onError={(e) => {
                   const target = e.target as HTMLImageElement
