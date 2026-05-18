@@ -262,7 +262,7 @@ function App() {
           </div>
           <div className="mx-auto grid max-w-3xl gap-6 text-left md:grid-cols-2">
             {[
-              'You want to feel put together, not "fashionable"',
+              'You want to walk into rooms feeling confident, not overdressed',
               'Getting dressed still feels inconsistent or overly complicated',
               'You\'re tired of overthinking what to wear for dinners, dates, events, and everyday life',
               'You want a wardrobe that feels effortless, versatile, and distinctly your own',
