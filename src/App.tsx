@@ -241,42 +241,8 @@ function App() {
         </div>
       </section>
 
-      {/* Founders Section */}
-      <section className="bg-warm-50 py-14 md:py-20">
-        <div className="mx-auto max-w-3xl px-6 lg:px-8">
-          <p className="mb-3 text-xs font-medium tracking-widest uppercase text-warm-400">
-            Meet the Founders
-          </p>
-          <h2 className="mb-6 font-serif text-2xl font-light text-warm-900 md:text-3xl">
-            Founded by Claudia and Jenn.
-          </h2>
-          <div className="space-y-4 text-sm leading-relaxed text-warm-600">
-            <p>
-              We met five years ago through the tech world and became close
-              friends over a shared appreciation for design, culture, and
-              personal style. Spending years around founders, investors, and
-              operators, we kept seeing the same thing: brilliant, successful
-              men who had mastered every part of their lives — except the part
-              that shaped first impressions and everyday confidence.
-            </p>
-            <p>
-              Many wanted to feel more confident and put together, but didn't
-              know where to start — or simply didn't have the time. Over the
-              years, we naturally became the people friends and family turned to
-              for outfit advice, wardrobe refreshes, and help finding pieces
-              that made them feel confident, polished, and more like themselves.
-            </p>
-            <p>
-              Uniform was created to bring that same thoughtful, personalized
-              approach to ambitious men looking to build a wardrobe that feels
-              effortless, refined, and aligned with the life they're building.
-            </p>
-          </div>
-        </div>
-      </section>
-
       {/* Problem / Emotional Resonance */}
-      <section className="bg-white py-24 md:py-32">
+      <section className="bg-white py-16 md:py-20">
         <div className="mx-auto max-w-4xl px-6 text-center lg:px-8">
           <p className="mb-6 text-xs font-medium tracking-widest uppercase text-warm-400">
             Sound familiar?
@@ -307,7 +273,7 @@ function App() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="bg-warm-50 py-24 md:py-32">
+      <section id="about" className="bg-warm-50 py-16 md:py-20">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid items-center gap-16 lg:grid-cols-2">
             <div className="overflow-hidden">
@@ -377,8 +343,42 @@ function App() {
         </div>
       </section>
 
+      {/* Founders Section */}
+      <section className="bg-warm-50 py-12 md:py-16">
+        <div className="mx-auto max-w-3xl px-6 lg:px-8">
+          <p className="mb-3 text-xs font-medium tracking-widest uppercase text-warm-400">
+            Meet the Founders
+          </p>
+          <h2 className="mb-6 font-serif text-2xl font-light text-warm-900 md:text-3xl">
+            Founded by Claudia and Jenn.
+          </h2>
+          <div className="space-y-4 text-sm leading-relaxed text-warm-600">
+            <p>
+              We met five years ago through the tech world and became close
+              friends over a shared appreciation for design, culture, and
+              personal style. Spending years around founders, investors, and
+              operators, we kept seeing the same thing: brilliant, successful
+              men who had mastered every part of their lives — except the part
+              that shaped first impressions and everyday confidence.
+            </p>
+            <p>
+              Many wanted to feel more confident and put together, but didn't
+              know where to start — or simply didn't have the time. Over the
+              years, we naturally became the people friends and family turned to
+              for outfit advice, wardrobe refreshes, and help finding pieces
+              that made them feel confident, polished, and more like themselves.
+            </p>
+            <p>
+              Uniform was created to bring that same thoughtful, personalized
+              approach to ambitious men looking to build a wardrobe that feels
+              effortless, refined, and aligned with the life they're building.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Transformation Philosophy */}
-      <section id="philosophy" className="bg-warm-950 py-24 md:py-32">
+      <section id="philosophy" className="bg-warm-950 py-16 md:py-20">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid items-center gap-16 lg:grid-cols-2">
             <div>
@@ -431,7 +431,7 @@ function App() {
       </section>
 
       {/* For All Your Wardrobe Needs */}
-      <section className="bg-white py-24 md:py-32">
+      <section className="bg-white py-16 md:py-20">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mb-16 text-center">
             <p className="mb-4 text-xs font-medium tracking-widest uppercase text-warm-400">
@@ -464,7 +464,7 @@ function App() {
       </section>
 
       {/* Styles We Love */}
-      <section id="styles" className="bg-warm-50 py-24 md:py-32">
+      <section id="styles" className="bg-warm-50 py-16 md:py-20">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mb-16 flex items-end justify-between">
             <div>
@@ -560,7 +560,7 @@ function App() {
       </section>
 
       {/* FAQ Section */}
-      <section id="faq" className="bg-white py-24 md:py-32">
+      <section id="faq" className="bg-white py-16 md:py-20">
         <div className="mx-auto max-w-3xl px-6 lg:px-8">
             <div className="mb-12 text-center">
               <p className="mb-4 text-xs font-medium tracking-widest uppercase text-warm-400">
@@ -599,7 +599,7 @@ function App() {
       </section>
 
       {/* Final CTA / Apply Section */}
-      <section id="apply" className="bg-warm-950 py-24 md:py-32">
+      <section id="apply" className="bg-warm-950 py-16 md:py-20">
         <div className="mx-auto max-w-3xl px-6 text-center lg:px-8">
           <p className="mb-4 text-xs font-medium tracking-widest uppercase text-warm-500">
             Get Started
