@@ -278,24 +278,27 @@ function App() {
       {/* Problem / Emotional Resonance */}
       <section className="bg-white py-24 md:py-32">
         <div className="mx-auto max-w-4xl px-6 text-center lg:px-8">
-          <p className="mb-6 text-xs font-medium tracking-widest uppercase text-warm-400">
-            Sound familiar?
-          </p>
-          <h2 className="mb-12 font-serif text-3xl font-light leading-snug text-warm-900 md:text-4xl">
-            You've optimized everything in your career.{' '}
-            <span className="text-warm-400">
-              But when it comes to how you present yourself, you're still
-              winging it.
-            </span>
+          <h2 className="mb-8 font-serif text-3xl font-light leading-snug text-warm-900 md:text-4xl">
+            Does this sound familiar?
           </h2>
+          <div className="mx-auto mb-12 max-w-2xl space-y-4 text-base leading-relaxed text-warm-600">
+            <p>
+              You've built a life you're proud of — but getting dressed still
+              feels harder than it should.
+            </p>
+            <p>
+              You want to look polished and confident without spending hours
+              thinking about clothes, trends, or what works for you.
+            </p>
+          </div>
           <div className="mx-auto grid max-w-3xl gap-6 text-left md:grid-cols-2">
             {[
-              'High income, low confidence in personal style',
-              'Decision fatigue around what to wear',
-              'Want to look polished — not "fashionable"',
-              'No time to make clothing a project',
-              'Underdressed for dates, dinners, and conferences',
-              'Ready to invest in how you show up',
+              'You want to feel put together, not "fashionable"',
+              'Getting dressed still feels inconsistent or overly complicated',
+              'You\'re tired of overthinking what to wear for dinners, dates, events, and everyday life',
+              'You want a wardrobe that feels effortless, versatile, and distinctly your own',
+              'You value quality and simplicity over trends and logos',
+              'You\'re ready to invest in how you show up',
             ].map((item) => (
               <div key={item} className="flex items-start gap-3">
                 <Minus size={16} className="mt-1 shrink-0 text-warm-300" />
@@ -417,8 +420,8 @@ function App() {
 
             <div className="overflow-hidden">
               <img
-                src="/images/transform.jpg"
-                alt="Elevated menswear aesthetic"
+                src="/images/confidence-street.jpeg"
+                alt="Street style - confidence through simplicity"
                 className="h-full w-full object-cover"
                 onError={(e) => {
                   const target = e.target as HTMLImageElement
