@@ -238,9 +238,8 @@ function App() {
               </span>
             </h1>
             <p className="mb-8 max-w-xl text-base leading-relaxed font-light text-warm-400">
-              Executive presence through personal style. For founders, builders,
-              and operators who want to show up with confidence — without
-              fashion becoming a hobby.
+              Build a wardrobe that feels confident, effortless, and
+              distinctly your own.
             </p>
             <button
               onClick={() => scrollTo('apply')}
