@@ -3,10 +3,8 @@ import './App.css'
 import {
   ArrowRight,
   Briefcase,
-  ChevronDown,
   ChevronLeft,
   ChevronRight,
-  ChevronUp,
   ExternalLink,
   GlassWater,
   Menu,
@@ -16,7 +14,7 @@ import {
   X,
 } from 'lucide-react'
 
-const NAV_LINKS = ['About', 'Philosophy', 'Styles', 'FAQ']
+const NAV_LINKS = ['About', 'Philosophy', 'Styles']
 
 const WARDROBE_CATEGORIES = [
   { name: 'Work', desc: 'Boardrooms to standups', icon: Briefcase },
@@ -91,36 +89,9 @@ const TESTIMONIALS = [
   },
 ]
 
-const FAQ_ITEMS = [
-  {
-    q: 'What options do you offer?',
-    a: "We're flexible depending on your needs. Whether you want a few email or text recommendations each week, in-person styling sessions, or an at-home try-on and feedback session to make better use of what you have.",
-  },
-  {
-    q: 'Do you work with clients remotely?',
-    a: 'Yes. Most of our clients are remote. We work via video calls, curated shopping links, and async communication.',
-  },
-  {
-    q: 'What brands do you recommend?',
-    a: "We're brand-agnostic. We focus on fit, quality, and aesthetic — not logos. Think COS, Aime Leon Dore, APC, Reigning Champ, and similar.",
-  },
-  {
-    q: 'How much should I expect to spend on clothes?',
-    a: "It depends on your goals and starting point. Most clients invest $2K\u2013$5K on their initial wardrobe refresh, but we work within your comfort zone.",
-  },
-  {
-    q: 'How long does the process take?',
-    a: 'Most clients see a complete wardrobe transformation within 1\u20132 weeks. Ongoing styling relationships are available for those who want continued support.',
-  },
-  {
-    q: "I have zero fashion sense. Is that okay?",
-    a: "That's exactly who we work with. You don't need to know anything about fashion. That's our job.",
-  },
-]
 
 function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const [openFaq, setOpenFaq] = useState<number | null>(null)
   const [carouselIdx, setCarouselIdx] = useState(0)
   const [visibleCount, setVisibleCount] = useState(3)
   const carouselRef = useRef<HTMLDivElement>(null)
@@ -540,45 +511,6 @@ function App() {
               />
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* FAQ Section */}
-      <section id="faq" className="bg-white py-16 md:py-20">
-        <div className="mx-auto max-w-3xl px-6 lg:px-8">
-            <div className="mb-12 text-center">
-              <p className="mb-4 text-xs font-medium tracking-widest uppercase text-warm-400">
-                FAQ
-              </p>
-              <h3 className="font-serif text-3xl font-light text-warm-900 md:text-4xl">
-                Common questions.
-              </h3>
-            </div>
-
-            <div className="divide-y divide-warm-200">
-              {FAQ_ITEMS.map((item, i) => (
-                <div key={i} className="py-6">
-                  <button
-                    onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                    className="flex w-full items-center justify-between text-left"
-                  >
-                    <span className="pr-4 text-base font-medium text-warm-900">
-                      {item.q}
-                    </span>
-                    {openFaq === i ? (
-                      <ChevronUp size={18} className="shrink-0 text-warm-400" />
-                    ) : (
-                      <ChevronDown size={18} className="shrink-0 text-warm-400" />
-                    )}
-                  </button>
-                  {openFaq === i && (
-                    <p className="mt-4 text-sm leading-relaxed text-warm-500">
-                      {item.a}
-                    </p>
-                  )}
-                </div>
-              ))}
-            </div>
         </div>
       </section>
 
