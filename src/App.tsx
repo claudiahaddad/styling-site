@@ -374,14 +374,14 @@ function App() {
               </h2>
               <div className="space-y-6 text-base leading-relaxed text-warm-400">
                 <p>
-                  We don't believe in trend-chasing or loud branding. We believe
-                  in fewer, better pieces — a refined system that makes getting
-                  dressed effortless.
+                  We believe personal style should make your life easier, not
+                  become another thing to optimize.
                 </p>
                 <p>
-                  Think of it as a founder uniform, elevated. Clean lines,
-                  quality materials, intentional fits. The kind of wardrobe that
-                  signals you have your life together — without trying too hard.
+                  Fewer pieces, better quality, thoughtful fit, and a wardrobe
+                  that works cohesively together. Clean, understated clothing
+                  that helps you look sharp and feel confident without
+                  overthinking it.
                 </p>
               </div>
               <div className="mt-10 grid grid-cols-2 gap-8">
