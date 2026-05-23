@@ -170,12 +170,14 @@ function App() {
                 {link}
               </button>
             ))}
-            <button
-              onClick={() => scrollTo('apply')}
+            <a
+              href="https://airtable.com/appqxpTBcljArNUaZ/pagtAa6FRj4M0WBf8/form"
+              target="_blank"
+              rel="noopener noreferrer"
               className="border border-warm-100 px-7 py-2.5 text-xs font-medium tracking-wider uppercase text-warm-100 transition-all hover:bg-warm-100 hover:text-warm-950"
             >
               Get in Touch
-            </button>
+            </a>
           </div>
 
           <button
@@ -197,12 +199,14 @@ function App() {
                 {link}
               </button>
             ))}
-            <button
-              onClick={() => scrollTo('apply')}
-              className="mt-4 w-full border border-warm-100 py-3 text-xs font-medium tracking-wider uppercase text-warm-100"
+            <a
+              href="https://airtable.com/appqxpTBcljArNUaZ/pagtAa6FRj4M0WBf8/form"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-4 block w-full border border-warm-100 py-3 text-center text-xs font-medium tracking-wider uppercase text-warm-100"
             >
               Get in Touch
-            </button>
+            </a>
           </div>
         )}
       </nav>
@@ -227,8 +231,10 @@ function App() {
               Build a wardrobe that feels confident, effortless, and
               distinctly your own.
             </p>
-            <button
-              onClick={() => scrollTo('apply')}
+            <a
+              href="https://airtable.com/appqxpTBcljArNUaZ/pagtAa6FRj4M0WBf8/form"
+              target="_blank"
+              rel="noopener noreferrer"
               className="group inline-flex items-center gap-3 bg-warm-100 px-10 py-4 text-xs font-medium tracking-wider uppercase text-warm-950 transition-all hover:bg-white"
             >
               Get in Touch
@@ -236,7 +242,7 @@ function App() {
                 size={14}
                 className="transition-transform group-hover:translate-x-1"
               />
-            </button>
+            </a>
           </div>
         </div>
       </section>
@@ -618,82 +624,18 @@ function App() {
             goals, style, and lifestyle. No obligation — just a conversation.
           </p>
 
-          <form
-            onSubmit={(e) => {
-              e.preventDefault()
-              alert("Thank you for reaching out. We'll be in touch within 24 hours.")
-            }}
-            className="mx-auto max-w-md space-y-5 text-left"
+          <a
+            href="https://airtable.com/appqxpTBcljArNUaZ/pagtAa6FRj4M0WBf8/form"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group inline-flex items-center gap-3 bg-warm-100 px-12 py-4 text-xs font-medium tracking-wider uppercase text-warm-950 transition-all hover:bg-white"
           >
-            <div>
-              <label className="mb-1.5 block text-xs font-medium tracking-wide uppercase text-warm-500">
-                Name
-              </label>
-              <input
-                type="text"
-                required
-                className="w-full border border-warm-700 bg-warm-900 px-4 py-3.5 text-sm text-warm-100 outline-none placeholder:text-warm-600 focus:border-warm-500"
-                placeholder="Your full name"
-              />
-            </div>
-            <div>
-              <label className="mb-1.5 block text-xs font-medium tracking-wide uppercase text-warm-500">
-                Email
-              </label>
-              <input
-                type="email"
-                required
-                className="w-full border border-warm-700 bg-warm-900 px-4 py-3.5 text-sm text-warm-100 outline-none placeholder:text-warm-600 focus:border-warm-500"
-                placeholder="you@company.com"
-              />
-            </div>
-            <div>
-              <label className="mb-1.5 block text-xs font-medium tracking-wide uppercase text-warm-500">
-                What best describes you?
-              </label>
-              <select className="w-full border border-warm-700 bg-warm-900 px-4 py-3.5 text-sm text-warm-100 outline-none focus:border-warm-500">
-                <option value="">Select one</option>
-                <option value="founder">Founder / CEO</option>
-                <option value="engineer">Engineer / Technical</option>
-                <option value="pm">Product / PM</option>
-                <option value="vc">Investor / VC</option>
-                <option value="exec">Executive / Director</option>
-                <option value="other">Other</option>
-              </select>
-            </div>
-            <div>
-              <label className="mb-1.5 block text-xs font-medium tracking-wide uppercase text-warm-500">
-                What are you interested in?
-              </label>
-              <select className="w-full border border-warm-700 bg-warm-900 px-4 py-3.5 text-sm text-warm-100 outline-none focus:border-warm-500">
-                <option value="">Select one</option>
-                <option value="text-recs">Weekly text / email recommendations</option>
-                <option value="in-person">In-person styling sessions</option>
-                <option value="at-home">At-home try-on & feedback</option>
-                <option value="unsure">Not sure yet</option>
-              </select>
-            </div>
-            <div>
-              <label className="mb-1.5 block text-xs font-medium tracking-wide uppercase text-warm-500">
-                What are your style goals?
-              </label>
-              <textarea
-                rows={3}
-                className="w-full resize-none border border-warm-700 bg-warm-900 px-4 py-3.5 text-sm text-warm-100 outline-none placeholder:text-warm-600 focus:border-warm-500"
-                placeholder="Tell us what you're looking to improve..."
-              />
-            </div>
-            <button
-              type="submit"
-              className="group mt-4 flex w-full items-center justify-center gap-2 bg-warm-100 py-4 text-xs font-medium tracking-wider uppercase text-warm-950 transition-all hover:bg-white"
-            >
-              Get in Touch
-              <ArrowRight
-                size={14}
-                className="transition-transform group-hover:translate-x-1"
-              />
-            </button>
-          </form>
+            Get in Touch
+            <ArrowRight
+              size={14}
+              className="transition-transform group-hover:translate-x-1"
+            />
+          </a>
         </div>
       </section>
 
