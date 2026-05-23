@@ -552,8 +552,8 @@ function App() {
             Ready to elevate how you show up?
           </h2>
           <p className="mb-12 text-base leading-relaxed text-warm-400">
-            Reach out and we'll schedule a free consultation to discuss your
-            goals, style, and lifestyle. No obligation — just a conversation.
+            Fill out the form so we can learn more about your style, lifestyle,
+            and what you're looking for. We'll follow up with next steps from there.
           </p>
 
           <a
